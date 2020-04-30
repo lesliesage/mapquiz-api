@@ -1,4 +1,4 @@
-exit# TODO: Calculate game score based on question distances (instead of random)
+# TODO: Calculate game score based on question distances (instead of random)
 # TODO: Make sure questions are never duplicates within a game
 # TODO: Create bell curve for distances guessed
 
