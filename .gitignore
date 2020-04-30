@@ -1,3 +1,9 @@
-/log/development.log
-/tmp/development_secret.txt
-/tmp/cache/bootsnap-compile-cache
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore uploaded files in development.
+/storage/*
+!/storage/.keep
