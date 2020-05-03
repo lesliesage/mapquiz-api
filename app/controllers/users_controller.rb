@@ -1,7 +1,4 @@
-require 'jwt'
 class UsersController < ApplicationController
-    
-
     def index
         users = User.all 
         render json: users.to_json(user_serializer)
@@ -21,7 +18,6 @@ class UsersController < ApplicationController
             render json: {authenticated: false}
         end
     end
-
 
     def token
         token = request.headers["Authentication"]
@@ -58,6 +54,4 @@ class UsersController < ApplicationController
     def user_params
         params.require(:user).permit(:username, :password)
     end
-
-
 end
