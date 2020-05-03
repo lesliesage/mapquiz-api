@@ -4,39 +4,27 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2'
+gem 'rails', '~> 6.0', '>= 6.0.2.2'
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'pg', '~> 1.2', '>= 1.2.3'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 4.3', '>= 4.3.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 6.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 4.2.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
-
+gem 'uglifier', '~> 4.2'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2', '>= 5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.10'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
-gem 'jwt'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
+# use jwt for auth
+gem 'jwt', '~> 2.2', '>= 2.2.1'
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.6', require: false
-
+gem 'bootsnap', '~> 1.4', '>= 1.4.6', require: false
 # Allow access to external Google Maps API
 gem 'rack-cors', :require => 'rack/cors'
 
@@ -48,8 +36,8 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.0.1'
-  gem 'listen', '~> 3.2'
+  gem 'listen', '~> 3.2', '>= 3.2.1'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.1'
+  gem 'spring', '~> 2.1'
+  gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
 end
