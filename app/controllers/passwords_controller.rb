@@ -26,8 +26,8 @@ class PasswordsController < ApplicationController
 
         if @user.email===forgot_password_params[:email] && @user.password_code_valid?
             if @user.reset_password!(forgot_password_params[:password]) && @user.authenticate(forgot_password_params[:password])
-                token = encode_token({ user_id: @user.id })
-                render json: { user: @user.to_json(user_serializer), jwt: token }, status: :accepted
+                token = encode({ user_id: @user.id })
+                render json: { user: @user.to_json(user_serializer), token: token }, status: :accepted
             else
                 render json: {error: users.errors.full_messages}, status: :unprocessable_entity
             end
