@@ -3,14 +3,15 @@ City.destroy_all
 Game.destroy_all
 Question.destroy_all
 
-p1 = User.create(username: 'Carol', password: 'pw')
-p2 = User.create(username: 'Steve', password: 'pw')
-p3 = User.create(username: 'Kelvin', password: 'pw')
-p4 = User.create(username: 'Carina', password: 'pw')
-p5 = User.create(username: 'Leslie', password: 'pw')
-p6 = User.create(username: 'Michelle', password: 'pw')
-p7 = User.create(username: 'Chloe', password: 'pw')
-p8 = User.create(username: 'David', password: 'pw')
+p1 = User.create(email: 'c@c.com', username: 'Carol', password: 'pw')
+p2 = User.create(email: 's@s.com', username: 'Steve', password: 'pw')
+p3 = User.create(email: 't@t.com', username: 'Thom', password: 'pw')
+p4 = User.create(email: 'd@d.com', username: 'David', password: 'pw')
+p4 = User.create(email: 'a@a.com', username: 'Ahleaha', password: 'pw')
+p5 = User.create(email: 'c1@c.com', username: 'Cameron', password: 'pw')
+p6 = User.create(email: 'c2@c.com', username: 'Connor', password: 'pw')
+p7 = User.create(email: 'c3@c.com', username: 'Colman', password: 'pw')
+p8 = User.create(email: 'c4@c.com', username: 'Cian', password: 'pw')
 
 c001 = City.create(name: 'Tokyo', country: 'Japan', lat: 35.685, long: 139.7514, population: 35676000)
 c002 = City.create(name: 'New York', country: 'United States', lat: 40.6943, long: -73.9249, population: 19354922)
