@@ -1,2 +1,1 @@
-module CitiesHelper
-end
+module CitiesHelper; end

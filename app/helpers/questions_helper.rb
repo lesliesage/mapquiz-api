@@ -1,2 +1,1 @@
-module QuestionsHelper
-end
+module QuestionsHelper; end

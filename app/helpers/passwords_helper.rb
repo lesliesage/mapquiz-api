@@ -1,2 +1,1 @@
-module PasswordsHelper
-end
+module PasswordsHelper; end

@@ -1,7 +1,3 @@
 require 'test_helper'
 
-class PasswordsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
-end
+class PasswordsControllerTest < ActionDispatch::IntegrationTest; end # end #   assert true # test "the truth" do
