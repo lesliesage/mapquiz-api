@@ -40,7 +40,7 @@ class UsersController < ApplicationController
          )
       render json: current_user.to_json(user_serializer), status: :accepted
     else
-      render json: { message: 'server error. please try again.' }
+      render json: { message: 'Invalid update. Please try again.' }
     end
   end
 
