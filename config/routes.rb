@@ -2,14 +2,15 @@ Rails.application.routes.draw do
   resources :questions
   resources :cities
   get '/randomtwenty', to: 'cities#randomtwenty'
-  resources :games, except: [:create]
+  resources :games, except: %i[create]
   get '/topten', to: 'games#top_ten'
   post '/games', to: 'games#create'
   get '/token', to: 'users#token'
-  get '/users/:username', to: 'users#show'
-  # put '/profile', to: 'users#update' #TODO make profile page and implement updates
-  resources :users, except: [:show]
+  get '/profile', to: 'users#show'
+  put '/profile', to: 'users#update'
+  resources :users, except: %i[show create]
+  post '/signup', to: 'users#create'
+  post '/auth', to: 'auth#create'
   post '/forgot', to: 'passwords#forgot'
-  post '/reset', to: 'passwords#reset'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post '/reset', to: 'passwords#reset' 
 end
