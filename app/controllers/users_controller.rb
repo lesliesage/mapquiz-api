@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:create]
   wrap_parameters :user, include: %i[username email password newPassword]
 
   def index
@@ -20,15 +21,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-    token = encode(user_id: user.id)
-    render json: {
-             authenticated: true,
-             message: 'You are logging in...',
-             user: user.to_json(user_serializer),
-             token: token
-           },
-           status: :accepted
+    @user = User.create(user_params)
+    if @user.valid?
+      @token = encode(user_id: @user.id)
+      render json: { user: @user.to_json(user_serializer), token: @token }, status: :created     
+    else
+      render json: { error: 'Failed to create user' }, status: :not_acceptable
+    end
   end
 
   def update
