@@ -9,9 +9,11 @@ class CitiesController < ApplicationController
   def randomtwenty
     random_nums = []
 
-    20.times do
-      num = (rand * 200).to_i
-      random_nums << num
+    until random_nums.length() == 20 do 
+      num = (rand * 260).to_i
+      if !random_nums.include?(num)
+        random_nums << num
+      end
     end
 
     random_cities = random_nums.map { |num| City.all[num] }
